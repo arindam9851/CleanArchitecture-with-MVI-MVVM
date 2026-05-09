@@ -28,6 +28,7 @@ object AppModule {
                 .addHeader("Content-Type", "application/json")
                 // .addHeader("Authorization", "Bearer token")
                 .build()
+
             chain.proceed(request)
 
         }
