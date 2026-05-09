@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.cleanarchitecturewithmvi.presentation.coin_list.component.CoinItems
 
 
@@ -17,7 +18,7 @@ fun ListCoinScreen(
     viewModel: ListCoinViewModel = hiltViewModel(),
     modifier: Modifier
 ){
-    val state by viewModel.state.collectAsState()
+    val state by viewModel.state.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit){
         viewModel.handleIntent(ListCoinIntent.ListOfCoins)
