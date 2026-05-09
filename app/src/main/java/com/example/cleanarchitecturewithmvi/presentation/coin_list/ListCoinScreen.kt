@@ -14,14 +14,15 @@ import com.example.cleanarchitecturewithmvi.presentation.coin_list.component.Coi
 
 @Composable
 fun ListCoinScreen(
-    viewModel: ListCoinViewModelMVI = hiltViewModel(),
+    viewModel: ListCoinViewModelMVVM = hiltViewModel(),
     modifier: Modifier
 ){
     val state by viewModel.state.collectAsStateWithLifecycle()
 
-    LaunchedEffect(Unit){
-        viewModel.handleIntent(ListCoinIntent.ListOfCoins)
-    }
+    // This is for MVI approach
+//    LaunchedEffect(Unit){
+//        viewModel.handleIntent(ListCoinIntent.ListOfCoins)
+//    }
 
     when{
         state.isLoading -> {
