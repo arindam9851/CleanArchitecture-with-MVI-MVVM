@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class ListCoinViewModel @Inject constructor(
+class ListCoinViewModelMVI @Inject constructor(
     private val useCase: ListCoinUseCase
 ) : ViewModel() {
 
