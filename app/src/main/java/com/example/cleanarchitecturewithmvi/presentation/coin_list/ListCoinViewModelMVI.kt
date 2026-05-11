@@ -18,7 +18,6 @@ class ListCoinViewModelMVI @Inject constructor(
     private val  _state = MutableStateFlow(ListCoinState())
     val state : StateFlow<ListCoinState> = _state
 
-
     fun handleIntent (intent : ListCoinIntent){
         when(intent) {
             is ListCoinIntent.ListOfCoins -> getCoinList()
